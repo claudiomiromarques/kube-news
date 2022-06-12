@@ -32,7 +32,7 @@ jobs:
       - name: Build and push Docker images
         uses: docker/build-push-action@v3.0.0
         with:
-          file: ./src/Dockerfile
+          file: ./src/dockerfile
           contex: ./src
           push: true
           tags: |
