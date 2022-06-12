@@ -37,6 +37,6 @@ jobs:
           push: true
           tags: |
             claudiomiromarques/kube-news:latest
-            claudiomiromarques/kube-news:${{github.run_number}}
+            claudiomiromarques/kube-news:v1
             
           
