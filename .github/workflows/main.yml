@@ -38,7 +38,7 @@ jobs:
           tags: |
             claudiomiromarques/kube-news:latest
             claudiomiromarques/kube-news:${{github.run_number}}
-    CD:
+  CD:
         needs: [CI]
         runs-on: ubuntu lastet
         steps:
