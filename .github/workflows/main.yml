@@ -38,7 +38,7 @@ jobs:
           tags: |
             claudiomiromarques/kube-news:latest
             claudiomiromarques/kube-news:${{github.run_number}}
-    CD:
+  CD:
       needs: [CI]
       runs-on: ubuntu lastet
       steps:
@@ -46,9 +46,9 @@ jobs:
       - name: Kubernetes Set Context
         uses: Azure/k8s-set-context@v2
         with:
-        method: kubeconfig
-        kubeconfig: ${{secrets.K8S_CONFIG}}
-        - name: Deploy to Kubernetes cluster
+          method: kubeconfig
+          kubeconfig: ${{secrets.K8S_CONFIG}}
+      - name: Deploy to Kubernetes cluster
         uses: Azure/k8s-deploy@v3.1
         with:
           images: claudiomiromarques/kube-news:${{github.run_number}}
