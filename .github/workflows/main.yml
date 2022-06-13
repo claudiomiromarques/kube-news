@@ -38,12 +38,12 @@ jobs:
           tags: |
             claudiomiromarques/kube-news:latest
             claudiomiromarques/kube-news:${{github.run_number}}
-  CD:
-        needs: [CI]
-        runs-on: ubuntu lastet
-        steps:
-        - uses: actions/checkout@v3
-        - name: Kubernetes Set Context
+    CD:
+      needs: [CI]
+      runs-on: ubuntu lastet
+      steps:
+      - uses: actions/checkout@v3
+      - name: Kubernetes Set Context
         uses: Azure/k8s-set-context@v2
         with:
         method: kubeconfig
